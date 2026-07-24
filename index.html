@@ -243,6 +243,10 @@ html[data-theme="light"] .logostrip img{opacity:.95;filter:brightness(0) invert(
 .chartcard text{fill:var(--chart-ink)}
 .chartcard line{stroke:var(--chart-grid)}
 .chartcard svg{width:100%;height:auto}
+.vtitle{text-align:center;font-family:var(--serif);font-weight:700;font-size:14px;color:var(--chart-ink);margin-bottom:8px}
+.vlegend{display:flex;flex-wrap:wrap;gap:9px 16px;justify-content:center;margin:0 0 10px}
+.vlg{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;color:var(--chart-ink)}
+.vlg i{width:15px;height:15px;border-radius:4px;display:inline-flex;align-items:center;justify-content:center;color:#fff;font-size:10px;font-weight:700}
 
 /* reveal */
 .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
@@ -284,7 +288,7 @@ html[data-theme="light"] .logostrip img{opacity:.95;filter:brightness(0) invert(
   <h3>Marketing Reactivation Impact</h3>
   <button class="iconbtn" id="menuClose" aria-label="Close menu"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
  </div>
- <ol><li><a href="#cover" data-i="0">Cover</a></li><li><a href="#recap" data-i="1">Recap</a></li><li><a href="#timeline" data-i="2">Reactivation Timeline</a></li><li><a href="#digital" data-i="3">Digital Activation</a></li><li><a href="#offline" data-i="4">Offline & OOH</a></li><li><a href="#metrics" data-i="5">How We Measure</a></li><li><a href="#funnel" data-i="6">Marketing Funnel</a></li><li><a href="#domestic" data-i="7">Domestic Search</a></li><li><a href="#global" data-i="8">Global Search</a></li><li><a href="#sentiment" data-i="9">Positive Sentiment</a></li><li><a href="#brand" data-i="10">Brand Health</a></li><li><a href="#china" data-i="11">Case Study: China</a></li><li><a href="#usa" data-i="12">Case Study: USA</a></li><li><a href="#next" data-i="13">What’s Next</a></li><li><a href="#close" data-i="14">Thank You</a></li></ol>
+ <ol><li><a href="#cover" data-i="0">Cover</a></li><li><a href="#recap" data-i="1">Recap</a></li><li><a href="#timeline" data-i="2">Reactivation Timeline</a></li><li><a href="#digital" data-i="3">Digital Activation</a></li><li><a href="#offline" data-i="4">Offline & OOH</a></li><li><a href="#metrics" data-i="5">How We Measure</a></li><li><a href="#funnel" data-i="6">Marketing Funnel</a></li><li><a href="#domestic" data-i="7">Domestic Search</a></li><li><a href="#global" data-i="8">Global Search</a></li><li><a href="#visits" data-i="9">Website Visits</a></li><li><a href="#sentiment" data-i="10">Positive Sentiment</a></li><li><a href="#brand" data-i="11">Brand Health</a></li><li><a href="#china" data-i="12">Case Study: China</a></li><li><a href="#usa" data-i="13">Case Study: USA</a></li><li><a href="#next" data-i="14">What’s Next</a></li><li><a href="#close" data-i="15">Thank You</a></li></ol>
  </div>
 </nav>
 <main>
@@ -361,7 +365,7 @@ html[data-theme="light"] .logostrip img{opacity:.95;filter:brightness(0) invert(
  </div>
  <div class="reveal" style="transition-delay:0ms"><p class="src"><b>Source</b> Google · Baidu · Weibo search data</p></div>
 </div></section><div class="sep"><i></i></div><section class="sec " id="domestic"><div class="inner">
- <div class="reveal" style="transition-delay:0ms"><div class="tabs"><a class="tab on" href="#domestic">Searches</a><a class="tab" href="#sentiment">Sentiment</a><a class="tab" href="#brand">Brand</a></div></div>
+ <div class="reveal" style="transition-delay:0ms"><div class="tabs"><a class="tab on" href="#domestic">Searches</a><a class="tab" href="#visits">Website Visits</a><a class="tab" href="#sentiment">Sentiment</a><a class="tab" href="#brand">Brand</a></div></div>
  <div class="reveal" style="transition-delay:0ms"><div class="eyebrow">Domestic destination searches</div></div>
  <div class="reveal" style="transition-delay:0ms"><h2 class="title"><span class="hl">Domestically</span>, since March, Abu Dhabi grew its share of destination searches.</h2></div>
  <div class="reveal" style="transition-delay:0ms"><p class="lead">Abu Dhabi’s share of UAE destination search rose while Dubai’s fell over the same period.</p></div>
@@ -372,21 +376,28 @@ html[data-theme="light"] .logostrip img{opacity:.95;filter:brightness(0) invert(
  </div>
  <div class="reveal" style="transition-delay:0ms"><p class="src"><b>Source</b> DCT Uplift Analysis · weekly query share, UAE origin (Google), indexed to 29 Mar</p></div>
 </div></section><div class="sep"><i></i></div><section class="sec " id="global"><div class="inner">
-     <div class="reveal" style="transition-delay:0ms"><div class="tabs"><a class="tab on" href="#domestic">Searches</a><a class="tab" href="#sentiment">Sentiment</a><a class="tab" href="#brand">Brand</a></div></div>
+     <div class="reveal" style="transition-delay:0ms"><div class="tabs"><a class="tab on" href="#domestic">Searches</a><a class="tab" href="#visits">Website Visits</a><a class="tab" href="#sentiment">Sentiment</a><a class="tab" href="#brand">Brand</a></div></div>
      <div class="reveal" style="transition-delay:0ms"><div class="eyebrow">Global destination searches</div></div>
      <div class="reveal" style="transition-delay:0ms"><h2 class="title">Global searches fell YoY, but Abu Dhabi <span class="hl">protected its volume</span> better than Dubai, especially in CN, IN &amp; RU.</h2></div>
      <div class="reveal" style="transition-delay:0ms"><p class="lead">Searches for both destinations are down year-on-year, yet Abu Dhabi held on more effectively, with strong growth in China and Russia by June 2026.</p></div>
      <div class="cmp"><div class="reveal" style="transition-delay:0ms"><div class="cmphead"><span>Market</span><span>Abu Dhabi</span><span>Dubai</span></div></div><div class="cmprow reveal"><span class="mkt"><span class="fl">🇬🇧</span>UK</span><span class="v"><span class="cnum neg win">−55%</span></span><span class="v"><span class="cnum neg">−59%</span></span></div><div class="cmprow reveal"><span class="mkt"><span class="fl">🇺🇸</span>US</span><span class="v"><span class="cnum neg win">−47%</span></span><span class="v"><span class="cnum neg">−53%</span></span></div><div class="cmprow reveal"><span class="mkt"><span class="fl">🇩🇪</span>Germany</span><span class="v"><span class="cnum neg win">−57%</span></span><span class="v"><span class="cnum neg">−62%</span></span></div><div class="cmprow reveal"><span class="mkt"><span class="fl">🇫🇷</span>France</span><span class="v"><span class="cnum neg win">−47%</span></span><span class="v"><span class="cnum neg">−58%</span></span></div><div class="cmprow reveal"><span class="mkt"><span class="fl">🇮🇳</span>India</span><span class="v"><span class="cnum neg win">−14%</span></span><span class="v"><span class="cnum neg">−33%</span></span></div><div class="cmprow reveal"><span class="mkt"><span class="fl">🇨🇳</span>China</span><span class="v"><span class="cnum pos">+43%</span></span><span class="v"><span class="cnum pos win">+65%</span></span></div><div class="cmprow reveal"><span class="mkt"><span class="fl">🇷🇺</span>Russia</span><span class="v"><span class="cnum pos win">+36%</span></span><span class="v"><span class="cnum pos">+26%</span></span></div></div>
      <div class="reveal" style="transition-delay:0ms"><p class="src"><b>Source</b> DCT Uplift Analysis · YoY queries vs Dubai (Google) · Baidu · Yandex</p></div>
-    </div></section><div class="sep"><i></i></div><section class="sec " id="sentiment"><div class="inner">
-     <div class="reveal" style="transition-delay:0ms"><div class="tabs"><a class="tab" href="#domestic">Searches</a><a class="tab on" href="#sentiment">Sentiment</a><a class="tab" href="#brand">Brand</a></div></div>
+    </div></section><div class="sep"><i></i></div><section class="sec " id="visits"><div class="inner">
+ <div class="reveal" style="transition-delay:0ms"><div class="tabs"><a class="tab" href="#domestic">Searches</a><a class="tab on" href="#visits">Website Visits</a><a class="tab" href="#sentiment">Sentiment</a><a class="tab" href="#brand">Brand</a></div></div>
+ <div class="reveal" style="transition-delay:0ms"><div class="eyebrow">Global destination searches</div></div>
+ <div class="reveal" style="transition-delay:0ms"><h2 class="title">By June, <span class="hl">visitabudhabi.ae</span> ranked #1 among regional destination websites.</h2></div>
+ <div class="reveal" style="transition-delay:0ms"><p class="lead">Surging search intent and campaign activations converted directly into sustained website traffic growth.</p></div>
+ <div class="reveal" style="transition-delay:0ms"><div class="chartcard" data-vchart><div class="vtitle">Website Visits · April – June 2026</div><div class="vlegend"><span class="vlg"><i style="background:#4bbd8b">✓</i>visitabudhabi.ae</span><span class="vlg"><i style="background:#e8724f">✓</i>visitdubai.com</span><span class="vlg"><i style="background:#b0472f">✓</i>visitqatar.com</span><span class="vlg"><i style="background:#c99a5b">✓</i>visitsaudi.com</span></div><div class="vsvg"></div></div></div>
+ <div class="reveal" style="transition-delay:0ms"><p class="src"><b>Source</b> SimilarWeb</p></div>
+</div></section><div class="sep"><i></i></div><section class="sec " id="sentiment"><div class="inner">
+     <div class="reveal" style="transition-delay:0ms"><div class="tabs"><a class="tab" href="#domestic">Searches</a><a class="tab" href="#visits">Website Visits</a><a class="tab on" href="#sentiment">Sentiment</a><a class="tab" href="#brand">Brand</a></div></div>
      <div class="reveal" style="transition-delay:0ms"><div class="eyebrow">Global destination searches</div></div>
      <div class="reveal" style="transition-delay:0ms"><h2 class="title"><span class="hl">Positive sentiment</span> has dropped significantly across all destinations in the region.</h2></div>
      <div class="reveal" style="transition-delay:0ms"><p class="lead">Year-on-year change in share of positive sentiment volume across key markets.</p></div>
      <div class="cmp"><div class="reveal" style="transition-delay:0ms"><div class="cmphead"><span>Market</span><span>Abu Dhabi</span><span>Dubai</span></div></div><div class="cmprow reveal"><span class="mkt"><span class="fl">🇬🇧</span>UK</span><span class="v"><span class="cnum neg win">−10%</span></span><span class="v"><span class="cnum neg">−26%</span></span></div><div class="cmprow reveal"><span class="mkt"><span class="fl">🇺🇸</span>US</span><span class="v"><span class="cnum neg win">−5%</span></span><span class="v"><span class="cnum neg">−7%</span></span></div><div class="cmprow reveal"><span class="mkt"><span class="fl">🇩🇪</span>Germany</span><span class="v"><span class="cnum neg">−14%</span></span><span class="v"><span class="cnum neg win">−3%</span></span></div><div class="cmprow reveal"><span class="mkt"><span class="fl">🇮🇳</span>India</span><span class="v"><span class="cnum neg win">−27%</span></span><span class="v"><span class="cnum neg">−35%</span></span></div><div class="cmprow reveal"><span class="mkt"><span class="fl">🇨🇳</span>China</span><span class="v"><span class="cnum neg">−53%</span></span><span class="v"><span class="cnum neg win">−48%</span></span></div><div class="cmprow reveal"><span class="mkt"><span class="fl">🇷🇺</span>Russia</span><span class="v"><span class="cnum neg">−57%</span></span><span class="v"><span class="cnum neg win">−10%</span></span></div></div>
      <div class="reveal" style="transition-delay:0ms"><p class="src"><b>Source</b> Sprinklr · YoY share of positive sentiment volume by market</p></div>
     </div></section><div class="sep"><i></i></div><section class="sec " id="brand"><div class="inner">
- <div class="reveal" style="transition-delay:0ms"><div class="tabs"><a class="tab" href="#domestic">Searches</a><a class="tab" href="#sentiment">Sentiment</a><a class="tab on" href="#brand">Brand</a></div></div>
+ <div class="reveal" style="transition-delay:0ms"><div class="tabs"><a class="tab" href="#domestic">Searches</a><a class="tab" href="#visits">Website Visits</a><a class="tab" href="#sentiment">Sentiment</a><a class="tab on" href="#brand">Brand</a></div></div>
  <div class="reveal" style="transition-delay:0ms"><div class="eyebrow">Brand health metrics</div></div>
  <div class="reveal" style="transition-delay:0ms"><h2 class="title">Both are recovering consideration and intent, but Abu Dhabi is doing so <span class="hl">faster</span>.</h2></div>
  <div class="reveal" style="transition-delay:0ms"><p class="lead">Early reactivation ignited interest across key markets, with Abu Dhabi posting stronger recovery in consideration (3-year desire) and intent (12-month desire) than Dubai.</p></div>
@@ -461,6 +472,7 @@ const io=new IntersectionObserver((es)=>{es.forEach(e=>{
   if(!e.isIntersecting)return;
   const el=e.target; el.classList.add('in');
   if(el.dataset.chart&&!seen.has(el)){seen.add(el);drawChart(el);}
+  if(el.dataset.vchart!==undefined&&!seen.has(el)){seen.add(el);drawVisits(el);}
   if(el.matches('.num')&&!seen.has(el)){seen.add(el);countUp(el);}
   io.unobserve(el);
 });},{threshold:.16, rootMargin:'0px 0px -8% 0px'});
@@ -477,6 +489,7 @@ document.querySelectorAll('.sec').forEach(sec=>{
   });
 });
 document.querySelectorAll('[data-chart]').forEach(c=>io.observe(c));
+document.querySelectorAll('[data-vchart]').forEach(c=>io.observe(c));
 document.querySelectorAll('.num').forEach(n=>io.observe(n));
 
 /* count-up for stat numbers like +19%, −6%, #2, 61% */
@@ -529,6 +542,39 @@ document.querySelectorAll('video').forEach(v=>vidPlayIO.observe(v));
 document.querySelectorAll('.sec').forEach(s=>{ if(s.querySelector('video')) secVio.observe(s); });
 
 /* responsive share-of-search chart */
+function drawVisits(el){
+  const svgEl=el.querySelector('.vsvg'); if(!svgEl)return;
+  const cats=['06 Apr','13 Apr','20 Apr','27 Apr','04 May','11 May','18 May','25 May','01 Jun','08 Jun','15 Jun','22 Jun'];
+  const series=[
+    {n:'saudi',c:'#c99a5b',w:2.4,d:[62,52,58,56,66,74,76,76,84,78,70,62]},
+    {n:'dubai',c:'#e8724f',w:2.4,d:[38,32,31,32,40,44,52,44,40,38,36,35]},
+    {n:'qatar',c:'#b0472f',w:2.4,d:[15,12,14,13,15,16,15,16,18,19,22,26]},
+    {n:'ad',c:'#4bbd8b',w:3.2,d:[42,38,37,35,30,45,72,66,78,74,84,92]}
+  ];
+  const W=680,H=360,pl=16,pr=14,pt=14,pb=38,min=0,max=100;
+  const x=i=>pl+(W-pl-pr)*i/(cats.length-1), y=v=>pt+(H-pt-pb)*(1-(v-min)/(max-min));
+  function smooth(a){
+    const p=a.map((v,i)=>[x(i),y(v)]);
+    let d='M'+p[0][0].toFixed(1)+' '+p[0][1].toFixed(1);
+    for(let i=0;i<p.length-1;i++){
+      const p0=p[i-1]||p[i], p1=p[i], p2=p[i+1], p3=p[i+2]||p2;
+      const c1x=p1[0]+(p2[0]-p0[0])/6, c1y=p1[1]+(p2[1]-p0[1])/6;
+      const c2x=p2[0]-(p3[0]-p1[0])/6, c2y=p2[1]-(p3[1]-p1[1])/6;
+      d+=` C${c1x.toFixed(1)} ${c1y.toFixed(1)} ${c2x.toFixed(1)} ${c2y.toFixed(1)} ${p2[0].toFixed(1)} ${p2[1].toFixed(1)}`;
+    }
+    return d;
+  }
+  let g='';for(let v=0;v<=100;v+=25){g+=`<line x1="${pl}" y1="${y(v)}" x2="${W-pr}" y2="${y(v)}"/>`;}
+  let xl='';cats.forEach((c,i)=>{if(i%2===0||i===cats.length-1)xl+=`<text x="${x(i)}" y="${H-pb+18}" font-size="10" text-anchor="middle">${c}</text>`;});
+  const dots=(a,c)=>a.map((v,i)=>`<circle cx="${x(i)}" cy="${y(v)}" r="2.6" fill="${c}"/>`).join('');
+  let lines='',alldots='';
+  series.forEach(sr=>{lines+=`<path class="vline" d="${smooth(sr.d)}" fill="none" stroke="${sr.c}" stroke-width="${sr.w}" stroke-linejoin="round" stroke-linecap="round"/>`;});
+  series.forEach(sr=>{alldots+=dots(sr.d,sr.c);});
+  svgEl.innerHTML=`<svg viewBox="0 0 ${W} ${H}" font-family="Carlito,sans-serif">${g}${xl}${lines}<g class="vdots" style="opacity:0">${alldots}</g></svg>`;
+  const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  svgEl.querySelectorAll('.vline').forEach((pth,i)=>{const len=pth.getTotalLength();if(reduce)return;pth.style.strokeDasharray=len;pth.style.strokeDashoffset=len;pth.getBoundingClientRect();pth.style.transition='stroke-dashoffset 1.4s cubic-bezier(.35,.02,.2,1) '+(i*0.1)+'s';requestAnimationFrame(()=>{pth.style.strokeDashoffset='0';});});
+  const dg=svgEl.querySelector('.vdots');if(dg){dg.style.transition='opacity .6s ease';setTimeout(()=>dg.style.opacity='1',reduce?0:1250);}
+}
 function drawChart(el){
   const cats=['29 Mar','5 Apr','12 Apr','19 Apr','26 Apr','3 May','10 May','17 May','24 May','31 May','7 Jun','14 Jun','21 Jun'];
   const AD=[100,94.8,95.2,97.6,103.1,97.6,102.1,105.9,103.5,106.6,109.7,113.1,119.0];
