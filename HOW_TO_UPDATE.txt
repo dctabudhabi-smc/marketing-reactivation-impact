@@ -1,0 +1,6 @@
+UPDATE PACK — drop into your GitHub repo (keep structure):
+  index.html          -> repo root (OVERWRITE)
+  favicon.ico         -> repo root (new, if not already added)
+  robots.txt          -> repo root (new, if not already added)
+  media/og-image.jpg  -> inside existing media/ (new, if not already added)
+Add file -> Upload files -> drag all four in. ~180 KB total.

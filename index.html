@@ -64,8 +64,9 @@ html[data-theme="light"] .iconbtn .sun{display:block}
 html[data-theme="light"] .iconbtn .moon{display:none}
 
 .menu{position:fixed;inset:0;z-index:85;background:rgba(16,11,7,.98);backdrop-filter:blur(8px);
- display:flex;flex-direction:column;padding:16px 20px 26px;transform:translateY(-100%);
+ display:flex;flex-direction:column;padding:16px 0 26px;transform:translateY(-100%);
  transition:transform .42s var(--ease);overflow:auto}
+.menu-inner{width:var(--wrap);max-width:100%;margin:0 auto;display:flex;flex-direction:column;padding:0 4px}
 html[data-theme="light"] .menu{background:rgba(245,238,227,.98)}
 html[data-theme="light"] .menu a{color:#2a2016}
 .menu.open{transform:none}
@@ -245,10 +246,11 @@ html[data-theme="light"] .logostrip img{opacity:.95;filter:brightness(0) invert(
 
 /* closing */
 .close{min-height:92svh;display:flex;align-items:center}
-.close{align-items:stretch}
-.close .inner{display:flex;flex-direction:column;padding:64px 0 52px;height:100%}
-.close .closemid{flex:1;display:flex;align-items:center}
+.hero.close{display:block}
+.close .inner{position:absolute;top:0;bottom:0;left:50%;transform:translateX(-50%);width:var(--wrap);max-width:100%;display:flex;flex-direction:column;padding:18px 0 30px;z-index:2}
+.close .closemid{flex:1;display:flex;align-items:center;justify-content:flex-start}
 .close .closebottom{display:flex;flex-direction:column}
+.close .eyebrowlogo{margin-bottom:0}
 .close .htitle{font-size:clamp(48px,17vw,110px)}
 </style>
 </head>
@@ -267,11 +269,13 @@ html[data-theme="light"] .logostrip img{opacity:.95;filter:brightness(0) invert(
   </div>
 </div></header>
 <nav class="menu" id="menu">
+ <div class="menu-inner">
  <div class="menuhead">
   <h3>Marketing Reactivation Impact</h3>
   <button class="iconbtn" id="menuClose" aria-label="Close menu"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
  </div>
  <ol><li><a href="#cover" data-i="0">Cover</a></li><li><a href="#recap" data-i="1">Recap</a></li><li><a href="#timeline" data-i="2">Reactivation Timeline</a></li><li><a href="#digital" data-i="3">Digital Activation</a></li><li><a href="#offline" data-i="4">Offline & OOH</a></li><li><a href="#metrics" data-i="5">How We Measure</a></li><li><a href="#funnel" data-i="6">Marketing Funnel</a></li><li><a href="#domestic" data-i="7">Domestic Search</a></li><li><a href="#global" data-i="8">Global Search</a></li><li><a href="#sentiment" data-i="9">Positive Sentiment</a></li><li><a href="#brand" data-i="10">Brand Health</a></li><li><a href="#spend" data-i="11">Media Spend</a></li><li><a href="#china" data-i="12">Case Study: China</a></li><li><a href="#usa" data-i="13">Case Study: USA</a></li><li><a href="#next" data-i="14">What’s Next</a></li><li><a href="#close" data-i="15">Thank You</a></li></ol>
+ </div>
 </nav>
 <main>
 <section class="sec hero" id="cover">
