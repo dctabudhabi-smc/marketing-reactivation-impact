@@ -167,6 +167,7 @@ html[data-theme="light"] .track{background:rgba(0,0,0,.10)}
 .mtog{font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:7px 13px;border-radius:999px;border:none;background:transparent;color:var(--muted);cursor:pointer;transition:.2s var(--ease)}
 .mtog.on{background:var(--coral);color:#fff}
 .mpane[hidden]{display:none}
+.mtogrow{display:flex;justify-content:flex-end;margin:8px 0 14px}
 .wnc{margin-top:14px;display:flex;align-items:center;gap:9px;flex-wrap:wrap;background:rgba(232,114,79,.15);border:1px solid rgba(232,114,79,.55);border-radius:11px;padding:9px 13px;color:var(--coral)}
 .wnc .wnc-label{font-weight:700;letter-spacing:.05em;text-transform:uppercase;font-size:11px;color:var(--coral)}
 .wnc b{font-family:var(--serif);font-weight:700;font-size:16px;color:var(--coral)}
@@ -222,12 +223,21 @@ html[data-theme="light"] .track{background:rgba(0,0,0,.10)}
 .mklabel{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin:16px 0 8px}
 .blist{margin:12px 0 4px;padding-left:20px;color:var(--sub);font-size:15px;line-height:1.65}
 .blist li{margin-bottom:9px}
-.hchips{display:flex;flex-wrap:wrap;gap:9px;margin:12px 0 4px}
-.hchip{background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:9px 13px;font-size:13.5px;color:var(--text);line-height:1.25}
+.hchips{display:flex;flex-wrap:wrap;gap:9px;margin:12px 0 4px;align-items:stretch}
+.hchip{display:flex;flex-direction:column;justify-content:center;background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:9px 13px;font-size:13.5px;color:var(--text);line-height:1.25}
 .hchip b{font-family:var(--serif);font-weight:700}
 .hchip .sub{display:block;margin-top:3px;color:var(--muted);font-size:11px;letter-spacing:.02em}
-.nsub{font-family:var(--serif);font-weight:700;font-size:17px;margin:26px 0 2px;color:var(--text)}
+.nsub{display:flex;align-items:flex-start;gap:11px;font-family:var(--serif);font-weight:700;font-size:17px;margin:26px 0 4px;color:var(--text)}
+.nsub .nnum{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:8px;background:rgba(232,114,79,.16);border:1px solid rgba(232,114,79,.5);color:var(--coral);font-family:var(--sans);font-size:13px;font-weight:800;margin-top:1px}
+.nsub .ntxt{flex:1;line-height:1.3}
 .nsub .dim{color:var(--muted);font-weight:400;font-size:14px}
+.dolist{list-style:none;margin:12px 0 4px;padding:0}
+.dolist li{position:relative;padding:12px 0 12px 24px;border-bottom:1px solid var(--line);color:var(--text);font-size:15px;line-height:1.5}
+.dolist li:last-child{border-bottom:0}
+.dolist li::before{content:"";position:absolute;left:3px;top:19px;width:7px;height:7px;border-radius:2px;background:var(--coral);transform:rotate(45deg)}
+.sgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:12px 0 4px}
+.sgrid .sq{aspect-ratio:1/1;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:var(--card2)}
+.sgrid .sq img{width:100%;height:100%;object-fit:cover;pointer-events:none;display:block}
 .caseflag{font-size:clamp(30px,9vw,48px);line-height:1;margin:0 0 8px;filter:drop-shadow(0 5px 10px rgba(0,0,0,.4))}
 
 /* media mosaic + carousel */
@@ -276,7 +286,7 @@ html[data-theme="light"] .logostrip img{opacity:.95;filter:brightness(0) invert(
 /* closing */
 .close{min-height:92svh;display:flex;align-items:center}
 .hero.close{display:block}
-.close .inner{position:absolute;top:0;bottom:0;left:50%;transform:translateX(-50%);width:var(--wrap);max-width:100%;display:flex;flex-direction:column;padding:44px 0 30px;z-index:2}
+.close .inner{position:absolute;top:0;bottom:0;left:50%;transform:translateX(-50%);width:var(--wrap);max-width:100%;display:flex;flex-direction:column;padding:44px 0 84px;z-index:2}
 .close .closemid{flex:1;display:flex;align-items:center;justify-content:flex-start}
 .close .closebottom{display:flex;flex-direction:column}
 .close .eyebrowlogo{margin-bottom:0}
@@ -303,7 +313,7 @@ html[data-theme="light"] .logostrip img{opacity:.95;filter:brightness(0) invert(
   <h3>Marketing Reactivation Impact</h3>
   <button class="iconbtn" id="menuClose" aria-label="Close menu"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
  </div>
- <ol><li><a href="#cover" data-i="0">Cover</a></li><li><a href="#recap" data-i="1">Recap</a></li><li><a href="#timeline" data-i="2">Reactivation Timeline</a></li><li><a href="#digital" data-i="3">Digital Activation</a></li><li><a href="#offline" data-i="4">Offline & OOH</a></li><li><a href="#metrics" data-i="5">How We Measure</a></li><li><a href="#funnel" data-i="6">Marketing Funnel</a></li><li><a href="#domestic" data-i="7">Domestic Search</a></li><li><a href="#global" data-i="8">Global Search</a></li><li><a href="#visits" data-i="9">Website Visits</a></li><li><a href="#sentiment" data-i="10">Positive Sentiment</a></li><li><a href="#brand" data-i="11">Brand Health</a></li><li><a href="#china" data-i="12">Case Study: China</a></li><li><a href="#usa" data-i="13">Case Study: USA</a></li><li><a href="#next" data-i="14">What’s Next</a></li><li><a href="#close" data-i="15">Thank You</a></li></ol>
+ <ol><li><a href="#cover" data-i="0">Home</a></li><li><a href="#recap" data-i="1">Recap</a></li><li><a href="#timeline" data-i="2">Reactivation Timeline</a></li><li><a href="#digital" data-i="3">Digital Activation</a></li><li><a href="#offline" data-i="4">Offline & OOH</a></li><li><a href="#metrics" data-i="5">How We Measure</a></li><li><a href="#funnel" data-i="6">Marketing Funnel</a></li><li><a href="#domestic" data-i="7">Domestic Search</a></li><li><a href="#global" data-i="8">Global Search</a></li><li><a href="#visits" data-i="9">Website Visits</a></li><li><a href="#sentiment" data-i="10">Positive Sentiment</a></li><li><a href="#brand" data-i="11">Brand Health</a></li><li><a href="#china" data-i="12">Case Study: China</a></li><li><a href="#usa" data-i="13">Case Study: USA</a></li><li><a href="#next" data-i="14">What’s Next</a></li><li><a href="#close" data-i="15">Thank You</a></li></ol>
  </div>
 </nav>
 <main>
@@ -322,10 +332,11 @@ html[data-theme="light"] .logostrip img{opacity:.95;filter:brightness(0) invert(
   <div class="credit reveal" style="margin-top:18px;transition-delay:360ms">Strategic Marketing &amp; Communications · DCT Abu Dhabi</div>
  </div>
 </section><section class="sec " id="recap"><div class="inner">
- <div class="reveal" style="transition-delay:0ms"><div class="rechead"><div class="eyebrow" style="margin:0">Recap</div><div class="mtoggle"><button class="mtog on" data-m="ad">Abu Dhabi</button><button class="mtog" data-m="du">Dubai</button></div></div></div>
+ <div class="reveal" style="transition-delay:0ms"><div class="eyebrow">Recap</div></div>
  <div class="reveal" style="transition-delay:0ms"><h2 class="title">The crisis had a significant impact on Abu Dhabi and all other regional destinations.</h2></div>
  <div class="reveal" style="transition-delay:0ms"><p class="lead">Awareness rose as Abu Dhabi and Dubai hit the headlines. This ‘toxic’ lift is a chance to reframe the narrative for people who just learned about us, while desire to visit in 3 years (consideration) and 12 months (intent) fell, and ‘will never visit’ rose for both.</p></div>
  <div class="legend reveal"><span><i class="sw gold"></i> Q4 2025</span><span><i class="sw coral"></i> Q1 2026</span></div>
+ <div class="reveal" style="transition-delay:0ms"><div class="mtogrow"><div class="mtoggle"><button class="mtog on" data-m="ad">Abu Dhabi</button><button class="mtog" data-m="du">Dubai</button></div></div></div>
  <div class="mpanes">
   <div class="mpane" data-m="ad"><div class="card reveal"><h3>Abu Dhabi</h3><div class="cap">Q4 2025 &nbsp;→&nbsp; Q1 2026</div><div class="mgroup"><div class="msub">Awareness</div><div class="fbar reveal"><div class="lab"><span>Q4 2025</span><b>62.4%</b></div><div class="track"><div class="fill" style="--p:0.624"></div></div></div><div class="fbar reveal"><div class="lab"><span>Q1 2026</span><b>66.3%</b></div><div class="track"><div class="fill coral" style="--p:0.663"></div></div></div></div><div class="mgroup"><div class="msub">Consideration</div><div class="fbar reveal"><div class="lab"><span>Q4 2025</span><b>44.5%</b></div><div class="track"><div class="fill" style="--p:0.445"></div></div></div><div class="fbar reveal"><div class="lab"><span>Q1 2026</span><b>37.7%</b></div><div class="track"><div class="fill coral" style="--p:0.377"></div></div></div></div><div class="mgroup"><div class="msub">Intent</div><div class="fbar reveal"><div class="lab"><span>Q4 2025</span><b>15.9%</b></div><div class="track"><div class="fill" style="--p:0.159"></div></div></div><div class="fbar reveal"><div class="lab"><span>Q1 2026</span><b>10.5%</b></div><div class="track"><div class="fill coral" style="--p:0.105"></div></div></div></div><div class="wnc"><span class="wnc-label">Will never consider</span><b>0.61%</b><span class="arr">→</span><b>3.78%</b></div></div></div>
   <div class="mpane" data-m="du" hidden><div class="card reveal"><h3>Dubai</h3><div class="cap">Q4 2025 &nbsp;→&nbsp; Q1 2026</div><div class="mgroup"><div class="msub">Awareness</div><div class="fbar reveal"><div class="lab"><span>Q4 2025</span><b>78.0%</b></div><div class="track"><div class="fill" style="--p:0.780"></div></div></div><div class="fbar reveal"><div class="lab"><span>Q1 2026</span><b>81.7%</b></div><div class="track"><div class="fill coral" style="--p:0.817"></div></div></div></div><div class="mgroup"><div class="msub">Consideration</div><div class="fbar reveal"><div class="lab"><span>Q4 2025</span><b>65.2%</b></div><div class="track"><div class="fill" style="--p:0.652"></div></div></div><div class="fbar reveal"><div class="lab"><span>Q1 2026</span><b>60.7%</b></div><div class="track"><div class="fill coral" style="--p:0.607"></div></div></div></div><div class="mgroup"><div class="msub">Intent</div><div class="fbar reveal"><div class="lab"><span>Q4 2025</span><b>31.9%</b></div><div class="track"><div class="fill" style="--p:0.319"></div></div></div><div class="fbar reveal"><div class="lab"><span>Q1 2026</span><b>25.9%</b></div><div class="track"><div class="fill coral" style="--p:0.259"></div></div></div></div><div class="wnc"><span class="wnc-label">Will never consider</span><b>1.26%</b><span class="arr">→</span><b>6.58%</b></div></div></div>
@@ -442,18 +453,18 @@ html[data-theme="light"] .logostrip img{opacity:.95;filter:brightness(0) invert(
 </div></section><div class="sep"><i></i></div><section class="sec " id="next"><div class="inner">
  <div class="reveal" style="transition-delay:0ms"><div class="eyebrow">Where we will push next</div></div>
  <div class="reveal" style="transition-delay:0ms"><h2 class="title">Abu Dhabi will continue to sustain its investment in marketing to <span class="hl">outpace competition’s recovery</span>.</h2></div>
- <div class="reveal" style="transition-delay:0ms"><p class="lead">Abu Dhabi marketing efforts will continue perception recovery and demand-generating efforts to:</p></div>
- <div class="reveal" style="transition-delay:0ms"><ul class="blist"><li>Support the Tourism &amp; Hospitality industry in its most critical quarter.</li><li>Empower sales offices to convert demand into sales.</li><li>Support the successful delivery of milestone projects (Guggenheim Opening, Frieze Abu Dhabi, F1).</li><li>Expedite recovery efforts.</li></ul></div>
- <div class="reveal" style="transition-delay:0ms"><div class="nsub">Strong sequence of high-visibility and high-impact campaigns in H2</div></div>
+ <div class="reveal" style="transition-delay:0ms"><div class="nsub"><span class="nnum">1</span><span class="ntxt">Abu Dhabi marketing efforts will continue perception recovery and demand-generating efforts to:</span></div></div>
+ <div class="reveal" style="transition-delay:0ms"><ul class="dolist"><li>Support the Tourism &amp; Hospitality industry in its most critical quarter.</li><li>Empower sales offices to convert demand into sales.</li><li>Support the successful delivery of milestone projects (Guggenheim Opening, Frieze Abu Dhabi, F1).</li><li>Expedite recovery efforts.</li></ul></div>
+ <div class="reveal" style="transition-delay:0ms"><div class="nsub"><span class="nnum">2</span><span class="ntxt">Strong sequence of high-visibility and high-impact campaigns in H2</span></div></div>
  <div class="reveal" style="transition-delay:0ms"><div class="hchips"><span class="hchip"><b>Summer</b></span><span class="hchip"><b>Brand Ambassadors</b><span class="sub">Global, India, China, Russia</span></span><span class="hchip"><b>Culture Season</b><span class="sub">Frieze, Nomad, Biennale, Cult. Summit</span></span><span class="hchip"><b>Diwali</b></span><span class="hchip"><b>Golden Week</b></span><span class="hchip"><b>Formula 1</b></span><span class="hchip"><b>Liwa</b></span><span class="hchip"><b>Guggenheim AD opening</b></span></div></div>
- <div class="reveal" style="transition-delay:0ms"><div class="nsub">Expanded airport activity <span class="dim">(Jul–Dec)</span></div></div>
+ <div class="reveal" style="transition-delay:0ms"><div class="nsub"><span class="nnum">3</span><span class="ntxt">Expanded airport activity <span class="dim">(Jul–Dec)</span></span></div></div>
+ <div class="reveal" style="transition-delay:0ms"><div class="sgrid"><div class="sq"><img loading="lazy" src="media/image82.jpg" alt=""></div><div class="sq"><img loading="lazy" src="media/image83.jpg" alt=""></div><div class="sq"><img loading="lazy" src="media/image84.jpg" alt=""></div><div class="sq"><img loading="lazy" src="media/image85.jpg" alt=""></div><div class="sq"><img loading="lazy" src="media/image86.jpg" alt=""></div><div class="sq"><img loading="lazy" src="media/image87.png" alt=""></div></div></div>
 </div>
-<div class="inner"><div class="scroller"><div class="m big reveal"><img loading="lazy" src="media/image82.jpg" alt=""></div><div class="m reveal"><img loading="lazy" src="media/image83.jpg" alt=""></div><div class="m reveal"><img loading="lazy" src="media/image84.jpg" alt=""></div><div class="m reveal"><img loading="lazy" src="media/image85.jpg" alt=""></div><div class="m reveal"><img loading="lazy" src="media/image86.jpg" alt=""></div><div class="m reveal"><img loading="lazy" src="media/image87.png" alt=""></div></div><div class="swipehint reveal">← swipe to explore →</div></div>
 <div class="inner">
- <div class="reveal" style="transition-delay:0ms"><div class="nsub">Why airports?</div></div>
- <div class="ilist"><div class="irow reveal"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg><div class="t"><b>Increase in brand awareness</b><span>2× brand awareness with airport exposure.</span></div></div><div class="irow reveal"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.6 5.6 6 .8-4.4 4.2 1.1 6L12 17.8 6.7 19.6l1.1-6L3.4 9.4l6-.8z"/></svg><div class="t"><b>Premium</b><span>Perceived brand value 13% higher than any other medium.</span></div></div><div class="irow reveal"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M9.5 12l1.8 1.8L15 10"/></svg><div class="t"><b>Safe</b><span>100% visible, 100% brand safe. No skip or scroll, no negative news.</span></div></div></div>
+ <div class="reveal" style="transition-delay:0ms"><div class="nsub"><span class="nnum">4</span><span class="ntxt">Why airports?</span></div></div>
+ <div class="reveal" style="transition-delay:0ms"><div class="ilist"><div class="irow reveal"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg><div class="t"><b>Increase in brand awareness</b><span>2× brand awareness with airport exposure.</span></div></div><div class="irow reveal"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.6 5.6 6 .8-4.4 4.2 1.1 6L12 17.8 6.7 19.6l1.1-6L3.4 9.4l6-.8z"/></svg><div class="t"><b>Premium</b><span>Perceived brand value 13% higher than any other medium.</span></div></div><div class="irow reveal"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M9.5 12l1.8 1.8L15 10"/></svg><div class="t"><b>Safe</b><span>100% visible, 100% brand safe. No skip or scroll, no negative news.</span></div></div></div></div>
  <div class="reveal" style="transition-delay:0ms"><div class="card reveal" style="margin-top:16px;display:flex;gap:13px;align-items:flex-start"><svg class="ic" style="color:var(--coral);width:24px;flex:0 0 auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><b style="color:var(--gold2)">Why now?</b><div style="color:var(--sub);font-size:14.5px;margin-top:3px">H2 is the busiest half of the airport year: the summer peak, then Christmas.</div></div></div></div>
- <div class="reveal" style="transition-delay:0ms"><p class="src"><b>Source</b> Ipsos Global Airport Research for JCDecaux · ACI World airport seasonality analysis · OAG global capacity data</p></div>
+ <div class="reveal" style="transition-delay:0ms"><p class="src"><b>Source</b> Ipsos Global Airport Research for JCDecaux · ACI World airport seasonality analysis · OAG global capacity data</div>
 </div></section><section class="sec hero close" id="close">
  <div class="bgimg" data-nopara style="background-image:url(media/image1.jpg)"></div>
  <div class="inner">
@@ -462,7 +473,7 @@ html[data-theme="light"] .logostrip img{opacity:.95;filter:brightness(0) invert(
   </div>
   <div class="closemid"><h2 class="htitle reveal">Thank you</h2></div>
   <div class="closebottom">
-   <img class="wmk reveal" src="media/logo-white.svg" alt="experience abu dhabi" style="width:min(236px,56%);transition-delay:120ms">
+   <img class="wmk reveal" src="media/logo-white.svg" alt="experience abu dhabi" style="width:min(200px,48%);transition-delay:120ms">
    <div class="credit reveal" style="margin-top:16px;transition-delay:240ms">Strategic Marketing &amp; Communications · DCT Abu Dhabi</div>
   </div>
  </div>
