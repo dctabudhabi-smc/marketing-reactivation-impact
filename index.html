@@ -17,6 +17,7 @@
  --sans:'Carlito','Calibri',system-ui,-apple-system,sans-serif;
  --ease:cubic-bezier(.4,.02,.2,1);
  --wrap:min(720px,92vw);
+ --chart-ink:#a89a8b; --chart-grid:rgba(255,255,255,.10);
 }
 html[data-theme="light"]{
  --ink:#f4ecdf; --ink2:#ece1d0; --card:#ffffff; --card2:#f7f0e5;
@@ -24,6 +25,7 @@ html[data-theme="light"]{
  --text:#2a2016; --sub:#5a4c3b; --muted:#8a7358;
  --barbg:linear-gradient(180deg,rgba(244,236,223,.95),rgba(244,236,223,.6) 70%,transparent);
  --line:rgba(150,110,55,.28);
+ --chart-ink:#6b5b48; --chart-grid:rgba(0,0,0,.13);
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
@@ -51,7 +53,8 @@ html[data-theme="light"] .iconbtn .moon{display:none}
 .menu{position:fixed;inset:0;z-index:85;background:rgba(16,11,7,.98);backdrop-filter:blur(8px);
  display:flex;flex-direction:column;padding:16px 20px 26px;transform:translateY(-100%);
  transition:transform .42s var(--ease);overflow:auto}
-html[data-theme="light"] .menu{background:rgba(28,20,12,.98)}
+html[data-theme="light"] .menu{background:rgba(245,238,227,.98)}
+html[data-theme="light"] .menu a{color:#2a2016}
 .menu.open{transform:none}
 .menuhead{display:flex;align-items:center;justify-content:space-between;gap:14px;margin:2px 0 14px;
  padding-bottom:12px;border-bottom:1px solid var(--line)}
@@ -86,6 +89,7 @@ h2.title .hl{color:var(--coral)}
 .tabs{display:flex;gap:8px;margin-bottom:18px;flex-wrap:wrap}
 .tab{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:7px 13px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
 .tab.on{background:var(--green);border-color:var(--green);color:#08120c}
+html[data-theme="light"] .tab.on{color:#fff}
 
 /* hero */
 .hero{min-height:100svh;display:flex;align-items:center;padding:100px 0 60px;color:var(--herotext)}
@@ -130,7 +134,6 @@ html[data-theme="light"] .hero .wmk,html[data-theme="light"] .hero .dct{filter:b
 .fbar .lab b{color:var(--text);font-weight:700}
 .track{height:9px;border-radius:6px;background:rgba(255,255,255,.08);overflow:hidden}
 html[data-theme="light"] .track{background:rgba(0,0,0,.10)}
-html[data-theme="light"] .chartcard{border-color:rgba(0,0,0,.14)}
 .footer-dct{position:absolute;top:16px;right:16px;width:120px;z-index:3;opacity:.95}
 .fill{height:100%;border-radius:6px;background:linear-gradient(90deg,var(--gold),var(--gold2));transform:scaleX(0);transform-origin:left;transition:transform 1s var(--ease)}
 .in .fill{transform:scaleX(var(--p))}
@@ -197,18 +200,24 @@ html[data-theme="light"] .chartcard{border-color:rgba(0,0,0,.14)}
 .scroller .m.wide{aspect-ratio:16/10}
 .scroller .m video,.scroller .m img{width:100%;height:100%;object-fit:cover}
 .swipehint{font-size:11.5px;color:var(--muted);letter-spacing:.05em;margin-top:2px;display:flex;align-items:center;gap:6px}
-.flagbadge{position:absolute;top:9px;right:9px;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;font-size:21px;line-height:1;background:rgba(255,255,255,.16);backdrop-filter:blur(6px);border:1.5px solid rgba(255,255,255,.72);box-shadow:0 3px 10px rgba(0,0,0,.45);z-index:3}
+.flagbadge{position:absolute;top:9px;right:9px;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;font-size:21px;line-height:1;background:rgba(255,255,255,.16);backdrop-filter:blur(6px);border:1.5px solid rgba(255,255,255,.72);box-shadow:0 3px 10px rgba(0,0,0,.45);z-index:3;overflow:hidden}
+.flagbadge .gicon{width:15px;height:15px;color:#fff}
+.flagbadge-img img{position:static;width:100%;height:100%;object-fit:cover}
 @media(min-width:760px){
- .scroller{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:1fr;gap:12px;overflow:visible;margin:0}
+ .scroller{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;overflow:visible;margin:0}
  .scroller .m{flex:none;aspect-ratio:9/13}
+ .scroller .m>video,.scroller .m>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
  .scroller .m.big{grid-column:span 2;grid-row:span 2;aspect-ratio:auto}
  .swipehint{display:none}
 }
 .logostrip{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:20px}
 .logostrip img{height:26px;width:auto;opacity:.8;filter:grayscale(1) brightness(1.7)}
+html[data-theme="light"] .logostrip img{opacity:.95;filter:brightness(0) invert(26%) sepia(70%) saturate(500%) hue-rotate(-5deg)}
 
 /* chart */
-.chartcard{background:linear-gradient(180deg,#241a13,#1a120c);border:1px solid var(--line);border-radius:18px;padding:16px 12px}
+.chartcard{background:linear-gradient(180deg,var(--card),var(--ink2));border:1px solid var(--line);border-radius:18px;padding:16px 12px}
+.chartcard text{fill:var(--chart-ink)}
+.chartcard line{stroke:var(--chart-grid)}
 .chartcard svg{width:100%;height:auto}
 
 /* reveal */
@@ -293,7 +302,7 @@ html[data-theme="light"] .chartcard{border-color:rgba(0,0,0,.14)}
  <div class="reveal" style="transition-delay:0ms"><h2 class="title">Global &amp; market-specific Brand Ambassadors, activated across <span class="hl">digital</span>.</h2></div>
  <div class="reveal" style="transition-delay:0ms"><p class="lead">Always-on social and streaming placements carried the campaign across every priority market.</p></div>
 </div>
-<div class="inner"><div class="scroller"><div class="m big reveal"><video autoplay muted loop playsinline preload="none" poster="media/dig01.jpg" data-webm="media/dig01.webm" data-mp4="media/dig01.mp4"></video><span class="flagbadge"><svg viewBox="0 0 24 24" class="gicon" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.7 2.5 2.7 15.5 0 18M12 3c-2.7 2.5-2.7 15.5 0 18"/></svg></span></div><div class="m reveal"><video autoplay muted loop playsinline preload="none" poster="media/dig02.jpg" data-webm="media/dig02.webm" data-mp4="media/dig02.mp4"></video><span class="flagbadge">🇮🇳</span></div><div class="m reveal"><video autoplay muted loop playsinline preload="none" poster="media/cn01.jpg" data-webm="media/cn01.webm" data-mp4="media/cn01.mp4"></video><span class="flagbadge">🇨🇳</span></div><div class="m reveal"><video autoplay muted loop playsinline preload="none" poster="media/dig04.jpg" data-webm="media/dig04.webm" data-mp4="media/dig04.mp4"></video><span class="flagbadge">🇷🇺</span></div><div class="m reveal"><video autoplay muted loop playsinline preload="none" poster="media/dig05.jpg" data-webm="media/dig05.webm" data-mp4="media/dig05.mp4"></video><span class="flagbadge flagbadge-txt">GCC</span></div><div class="m reveal"><video autoplay muted loop playsinline preload="none" poster="media/dig06.jpg" data-webm="media/dig06.webm" data-mp4="media/dig06.mp4"></video><span class="flagbadge">🇮🇳</span></div><div class="m reveal"><video autoplay muted loop playsinline preload="none" poster="media/dig07.jpg" data-webm="media/dig07.webm" data-mp4="media/dig07.mp4"></video><span class="flagbadge"><svg viewBox="0 0 24 24" class="gicon" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.7 2.5 2.7 15.5 0 18M12 3c-2.7 2.5-2.7 15.5 0 18"/></svg></span></div><div class="m reveal"><video autoplay muted loop playsinline preload="none" poster="media/dig08.jpg" data-webm="media/dig08.webm" data-mp4="media/dig08.mp4"></video><span class="flagbadge"><svg viewBox="0 0 24 24" class="gicon" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.7 2.5 2.7 15.5 0 18M12 3c-2.7 2.5-2.7 15.5 0 18"/></svg></span></div><div class="m reveal"><video autoplay muted loop playsinline preload="none" poster="media/dig09.jpg" data-webm="media/dig09.webm" data-mp4="media/dig09.mp4"></video><span class="flagbadge"><svg viewBox="0 0 24 24" class="gicon" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.7 2.5 2.7 15.5 0 18M12 3c-2.7 2.5-2.7 15.5 0 18"/></svg></span></div></div><div class="swipehint reveal">← swipe to explore →</div></div>
+<div class="inner"><div class="scroller"><div class="m big reveal"><video autoplay muted loop playsinline preload="none" poster="media/dig01.jpg" data-webm="media/dig01.webm" data-mp4="media/dig01.mp4"></video><span class="flagbadge"><svg viewBox="0 0 24 24" class="gicon" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"><circle cx="12" cy="12" r="8.2"/><path d="M3.8 12h16.4"/><path d="M12 3.8c2.4 2.3 2.4 13.9 0 16.4M12 3.8c-2.4 2.3-2.4 13.9 0 16.4"/></svg></span></div><div class="m reveal"><video autoplay muted loop playsinline preload="none" poster="media/dig02.jpg" data-webm="media/dig02.webm" data-mp4="media/dig02.mp4"></video><span class="flagbadge">🇮🇳</span></div><div class="m reveal"><video autoplay muted loop playsinline preload="none" poster="media/cn01.jpg" data-webm="media/cn01.webm" data-mp4="media/cn01.mp4"></video><span class="flagbadge">🇨🇳</span></div><div class="m reveal"><video autoplay muted loop playsinline preload="none" poster="media/dig04.jpg" data-webm="media/dig04.webm" data-mp4="media/dig04.mp4"></video><span class="flagbadge">🇷🇺</span></div><div class="m reveal"><video autoplay muted loop playsinline preload="none" poster="media/dig05.jpg" data-webm="media/dig05.webm" data-mp4="media/dig05.mp4"></video><span class="flagbadge flagbadge-img"><img src="media/gcc.svg" alt="GCC"></span></div><div class="m reveal"><video autoplay muted loop playsinline preload="none" poster="media/dig06.jpg" data-webm="media/dig06.webm" data-mp4="media/dig06.mp4"></video><span class="flagbadge">🇮🇳</span></div><div class="m reveal"><video autoplay muted loop playsinline preload="none" poster="media/dig07.jpg" data-webm="media/dig07.webm" data-mp4="media/dig07.mp4"></video><span class="flagbadge"><svg viewBox="0 0 24 24" class="gicon" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"><circle cx="12" cy="12" r="8.2"/><path d="M3.8 12h16.4"/><path d="M12 3.8c2.4 2.3 2.4 13.9 0 16.4M12 3.8c-2.4 2.3-2.4 13.9 0 16.4"/></svg></span></div><div class="m reveal"><video autoplay muted loop playsinline preload="none" poster="media/dig08.jpg" data-webm="media/dig08.webm" data-mp4="media/dig08.mp4"></video><span class="flagbadge"><svg viewBox="0 0 24 24" class="gicon" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"><circle cx="12" cy="12" r="8.2"/><path d="M3.8 12h16.4"/><path d="M12 3.8c2.4 2.3 2.4 13.9 0 16.4M12 3.8c-2.4 2.3-2.4 13.9 0 16.4"/></svg></span></div><div class="m reveal"><video autoplay muted loop playsinline preload="none" poster="media/dig09.jpg" data-webm="media/dig09.webm" data-mp4="media/dig09.mp4"></video><span class="flagbadge"><svg viewBox="0 0 24 24" class="gicon" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"><circle cx="12" cy="12" r="8.2"/><path d="M3.8 12h16.4"/><path d="M12 3.8c2.4 2.3 2.4 13.9 0 16.4M12 3.8c-2.4 2.3-2.4 13.9 0 16.4"/></svg></span></div></div><div class="swipehint reveal">← swipe to explore →</div></div>
 <div class="inner"><div class="reveal" style="transition-delay:0ms"><div class="logostrip"><img src="media/image22.png" alt=""><img src="media/image23.png" alt=""><img src="media/image24.png" alt=""><img src="media/image25.png" alt=""><img src="media/image26.png" alt=""><img src="media/image27.png" alt=""><img src="media/image28.png" alt=""><img src="media/image29.png" alt=""><img src="media/image30.png" alt=""><img src="media/image31.png" alt=""><img src="media/image32.png" alt=""><img src="media/image33.png" alt=""><img src="media/image34.png" alt=""></div></div>
  <div class="reveal" style="transition-delay:0ms"><p class="src"><b>Source</b> DCT Abu Dhabi Campaign Uplift Analysis</p></div>
 </div></section><div class="sep"><i></i></div><section class="sec " id="offline"><div class="inner">
