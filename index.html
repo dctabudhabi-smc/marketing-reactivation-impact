@@ -4,6 +4,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Marketing Reactivation Impact · Experience Abu Dhabi</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="googlebot" content="noindex, nofollow">
+<meta name="description" content="How Abu Dhabi's marketing reactivation rebuilt travel demand across global markets — impact across search, sentiment and brand health. By Strategic Marketing & Communications, DCT Abu Dhabi.">
+<link rel="icon" href="favicon.ico">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Marketing Reactivation Impact — Experience Abu Dhabi">
+<meta property="og:description" content="How Abu Dhabi's marketing reactivation rebuilt travel demand across global markets — impact across search, sentiment and brand health. By Strategic Marketing & Communications, DCT Abu Dhabi.">
+<meta property="og:image" content="https://dctabudhabi-smc.github.io/marketing-reactivation-impact/media/og-image.jpg">
+<meta property="og:url" content="https://dctabudhabi-smc.github.io/marketing-reactivation-impact/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Marketing Reactivation Impact — Experience Abu Dhabi">
+<meta name="twitter:description" content="How Abu Dhabi's marketing reactivation rebuilt travel demand across global markets — impact across search, sentiment and brand health. By Strategic Marketing & Communications, DCT Abu Dhabi.">
+<meta name="twitter:image" content="https://dctabudhabi-smc.github.io/marketing-reactivation-impact/media/og-image.jpg">
 <meta name="theme-color" content="#160f0a">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,8 +48,8 @@ img,video{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
 
 /* ---------- top bar + nav ---------- */
-.bar{position:fixed;top:0;left:0;right:0;z-index:80;display:flex;align-items:center;justify-content:space-between;
- padding:12px 18px;background:var(--barbg);backdrop-filter:blur(8px)}
+.bar{position:fixed;top:0;left:0;right:0;z-index:80;background:var(--barbg);backdrop-filter:blur(8px)}
+.bar-inner{width:var(--wrap);max-width:100%;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:12px 0}
 .bar .b{display:flex;align-items:center;gap:9px;min-width:0}
 .bar .dot{width:7px;height:7px;border-radius:50%;background:var(--gold);box-shadow:0 0 10px var(--gold);flex:0 0 auto}
 .bar .wm{font-weight:700;letter-spacing:.2em;font-size:10.5px;text-transform:uppercase;color:var(--gold2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -193,10 +206,10 @@ html[data-theme="light"] .track{background:rgba(0,0,0,.10)}
 .caseflag{font-size:clamp(30px,9vw,48px);line-height:1;margin:0 0 8px;filter:drop-shadow(0 5px 10px rgba(0,0,0,.4))}
 
 /* media mosaic + carousel */
-.scroller{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px;margin:0 -4px;
+.scroller{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;touch-action:pan-x;overscroll-behavior-x:contain;padding-bottom:10px;margin:0 -4px;
  -webkit-overflow-scrolling:touch;scrollbar-width:none}
 .scroller::-webkit-scrollbar{display:none}
-.scroller .m{flex:0 0 76%;scroll-snap-align:center;border-radius:16px;overflow:hidden;aspect-ratio:9/13;background:var(--card2);position:relative;border:1px solid var(--line)}
+.scroller .m{flex:0 0 82%;scroll-snap-align:start;border-radius:16px;overflow:hidden;aspect-ratio:9/13;background:var(--card2);position:relative;border:1px solid var(--line);touch-action:pan-x}
 .scroller .m.wide{aspect-ratio:16/10}
 .scroller .m video,.scroller .m img{width:100%;height:100%;object-fit:cover}
 .swipehint{font-size:11.5px;color:var(--muted);letter-spacing:.05em;margin-top:2px;display:flex;align-items:center;gap:6px}
@@ -233,14 +246,15 @@ html[data-theme="light"] .logostrip img{opacity:.95;filter:brightness(0) invert(
 /* closing */
 .close{min-height:92svh;display:flex;align-items:center}
 .close{align-items:stretch}
-.close .inner{display:flex;flex-direction:column;padding:96px 0 48px;height:100%}
-.close .closecenter{flex:1;display:flex;flex-direction:column;justify-content:center}
+.close .inner{display:flex;flex-direction:column;padding:64px 0 52px;height:100%}
+.close .closemid{flex:1;display:flex;align-items:center}
+.close .closebottom{display:flex;flex-direction:column}
 .close .htitle{font-size:clamp(48px,17vw,110px)}
 </style>
 </head>
 <body>
 <div class="prog" id="prog"></div>
-<header class="bar">
+<header class="bar"><div class="bar-inner">
  <div class="b"><span class="dot"></span><span class="wm">Experience Abu Dhabi</span></div>
  <div class="tools">
   <button class="iconbtn" id="theme" aria-label="Toggle light mode" title="Toggle light / dark">
@@ -250,8 +264,8 @@ html[data-theme="light"] .logostrip img{opacity:.95;filter:brightness(0) invert(
   <button class="iconbtn" id="burger" aria-label="Open menu">
    <svg viewBox="0 0 24 24"><path d="M3 6h18M3 12h12M3 18h18"/></svg>
   </button>
- </div>
-</header>
+  </div>
+</div></header>
 <nav class="menu" id="menu">
  <div class="menuhead">
   <h3>Marketing Reactivation Impact</h3>
@@ -402,10 +416,10 @@ html[data-theme="light"] .logostrip img{opacity:.95;filter:brightness(0) invert(
   <div class="eyebrowlogo reveal" style="justify-content:flex-end">
     <img class="dct" src="media/image3.png" alt="Department of Culture and Tourism" style="width:152px">
   </div>
-  <div class="closecenter">
-   <h2 class="htitle reveal">Thank you</h2>
-   <img class="wmk reveal" src="media/logo-white.svg" alt="experience abu dhabi" style="width:min(280px,66%);margin-top:18px;transition-delay:120ms">
-   <div class="credit reveal" style="margin-top:22px;transition-delay:240ms">Strategic Marketing &amp; Communications · DCT Abu Dhabi</div>
+  <div class="closemid"><h2 class="htitle reveal">Thank you</h2></div>
+  <div class="closebottom">
+   <img class="wmk reveal" src="media/logo-white.svg" alt="experience abu dhabi" style="width:min(280px,66%);transition-delay:120ms">
+   <div class="credit reveal" style="margin-top:16px;transition-delay:240ms">Strategic Marketing &amp; Communications · DCT Abu Dhabi</div>
   </div>
  </div>
 </section>
@@ -494,10 +508,14 @@ function playVid(v){
   });
 }
 const secVio=new IntersectionObserver((es)=>{es.forEach(e=>{
-  const vids=e.target.querySelectorAll('video');
-  if(e.isIntersecting) vids.forEach(playVid);
-  else vids.forEach(v=>v.pause&&v.pause());
-});},{threshold:0, rootMargin:'150px 0px 150px 0px'});
+  if(e.isIntersecting) e.target.querySelectorAll('video').forEach(playVid);
+  // never pause — keep videos looping so returning to a section always shows motion
+});},{threshold:0, rootMargin:'400px 0px 400px 0px'});
+// resume any loaded videos when tab becomes visible again
+document.addEventListener('visibilitychange',()=>{ if(!document.hidden) document.querySelectorAll('video').forEach(v=>{if(v.src||v.querySelector('source'))v.play&&v.play().catch(()=>{});}); });
+// play any video the moment it becomes visible (covers scroll up/down and carousel swipes); never pause
+const vidPlayIO=new IntersectionObserver((es)=>{es.forEach(e=>{ if(e.isIntersecting) playVid(e.target); });},{threshold:0.2});
+document.querySelectorAll('video').forEach(v=>vidPlayIO.observe(v));
 document.querySelectorAll('.sec').forEach(s=>{ if(s.querySelector('video')) secVio.observe(s); });
 
 /* responsive share-of-search chart */
